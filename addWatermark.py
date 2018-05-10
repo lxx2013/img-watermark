@@ -1,4 +1,6 @@
 #coding=utf-8
+#PIL Image 目前来看被skimage秒杀.
+#PIL Image读入图片不像skimage一样是numpy数组格式,且不能输出float64的图片
 from PIL import Image
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure,imshow,show,title,subplot
