@@ -1,31 +1,19 @@
-#coding=utf-8
-from PIL import Image
-import matplotlib.pyplot as plt
-from matplotlib.pyplot import figure,imshow,show,title,subplot
-im=Image.open('gl1.jpg')
-plt.figure("origin image")
-plt.imshow(im)
-plt.show()
 
-"""
+clc;
+clear;
+close all;
+alpha = 1;
+
+%% read data
 im = double(imread('C:/Users/Administrator/Desktop/gl1.jpg'))/255;
 mark = double(imread('C:/Users/Administrator/Desktop/watermark.jpg'))/255;
-"""
-im = Image.open("gl1.jpg")
-mark = Image.open("watermark.jpg")
-figure(),imshow(im),title('gl1')
-figure(),imshow(mark),title('watermark')
-for i in range(240):
-        for j in range(300):
-                for k in range(3):
-                        imf_ifft[i,j,k] = int(np.abs(imf_ifft[i,j,k])*255
+figure, imshow(im),title('original image');
+figure, imshow(mark),title('watermark');
 
-# encode mark
-imsize = im.shape;
+%% encode mark
+imsize = size(im);
 %random
-"#TH=zeros(imsize[0]*0.5,imsize[1],imsize(3));"
-TH = np.zeros(imsize[0]*0.5,imsize[1],imsize[3])
-"""
+TH=zeros(imsize(1)*0.5,imsize(2),imsize(3));
 TH1 = TH;
 TH1(1:size(mark,1),1:size(mark,2),:) = mark;
 M=randperm(0.5*imsize(1));
@@ -36,7 +24,6 @@ for i=1:imsize(1)*0.5
         TH(i,j,:)=TH1(M(i),N(j),:);
     end
 end
-
 % symmetric
 mark_ = zeros(imsize(1),imsize(2),imsize(3));
 mark_(1:imsize(1)*0.5,1:imsize(2),:)=TH;
@@ -96,4 +83,3 @@ MSE=MSE/360.^2;
 PSNR=20*log10(255/sqrt(MSE));
 MSE
 PSNR
-"""
